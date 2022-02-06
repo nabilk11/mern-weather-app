@@ -5,19 +5,26 @@ const router = express.Router();
 // Weather class will allow us to call weather from API
 const Weather = require('./weather');
 
+//Home Route Get Request
+router.get("/", (req, res) => {
+    res.send('<h1>Mern Weather</h1>')
+})
+
 // GET Request Route - Will let us get weather from the weather api
 // this is a static get request where the values are put in already
-router.get('/weather', async (req, res, next) => {
+router.get("/weather", async (req, res) => {
+    
     let weather = new Weather();
     //example GET request with get WeatherData
-    let weatherData = await weather.getWeatherData(11426, "us");
+    let weatherData = await weather.getWeatherData(98052, "imperial");
     //data is returned as a JSON then it will be stringify'd
     res.header("Content-Type", 'application/json');
     res.send(JSON.stringify(weatherData, null, 4))
 });
 
 // POST Request Route - Lets us get the weather based on the request body
-router.post('/weather', async (req, res) => {
+router.post("/weather", async (req, res) => {
+    
     const {zipCode, tempMetric} = req.body;
     let weather = new Weather();
     // dyanamic parameters of zipCode and tempMetric
