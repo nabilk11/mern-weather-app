@@ -4,43 +4,43 @@ const WeatherSchema = new mongoose.Schema({
     zip: Number,
     coord: {
         lon: Number,
-        lat: Number,
+        lat: Number
     },
-    weather: [
+    weather:  [
         {
             id: Number,
             main: String,
             description: String,
-            icon:String,
-        }
+            icon: String
+        },
     ],
-    base:String,
+    base: String,
     main: {
         temp: Number,
-        feels_like:Number,
+        feels_like: Number,
         temp_min: Number,
         temp_max: Number,
         pressure: Number,
-        humidity:Number,
+        humidity: Number
     },
     visibility: Number,
     wind: {
         speed: Number,
-        deg:Number,
+        deg: Number
     },
     clouds: {
-        all: Number,
+        all: Number
     },
     dt: Number,
     sys: {
-        type: {type:Number},
+        type: {type: Number},
         id: Number,
-        message:Number,
-        country:String,
-        sunrise:Date,
-        sunset:Date,
+        message: Number,
+        country: String,
+        sunrise: Date,
+        sunset: Date
     },
-    timezone:Number,
+    timezone: Number,
     id: Number,
     name: String,
     cod: Number,

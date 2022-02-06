@@ -37,7 +37,7 @@ router.post("/weatherMONGO", async (req, res) => {
     let weather = new Weather();
     let weatherData = await weather.getWeatherData(zipCode, tempMetric)
 
-    await weather.saveWeatherDataDb(zipCode, tempMetric)
+    await weather.saveWeatherDataDb(zipCode, weatherData)
     res.header("Content-Type", 'application/json')
     res.send(JSON.stringify(weatherData, null, 4))
 })
