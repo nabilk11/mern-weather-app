@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
 const Weather = require("./api/weather")
 //API Routes 
 const apis = require('./api');
-app.use("api", apis);
+app.use("/api", apis);
 app.use("/weather", apis)
 
 
