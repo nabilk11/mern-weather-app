@@ -14,7 +14,8 @@ const WEATHER = require("../models/Weather");
 // Weather Class
 class Weather {
 
-// saving weather info to db
+
+// SAVING WEATHER TO THE DB
 saveWeatherDataDb = async (zipCode, data) => {
     const filter = {
         zip: zipCode,
@@ -26,7 +27,9 @@ saveWeatherDataDb = async (zipCode, data) => {
     }
     await this.findOneReplace(filter, replace)
 }
-// getting weather data based on zipcode
+
+
+// GETTING WEATHER FROM THE DB BASED ON ZIPCODE!
 getWeatherDataDb = async (zipCode) => {
     return WEATHER.findOne( {zip: zipCode})
 }
